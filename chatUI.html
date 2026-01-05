@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat UI</title>
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #e5ddd5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    /* CHAT CONTAINER */
+    .chat-container {
+      width: 360px;
+      height: 600px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    /* HEADER */
+    .chat-header {
+      background: #075e54;
+      color: white;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #cfd8dc;
+    }
+
+    .user-info h3 {
+      font-size: 16px;
+    }
+
+    .user-info span {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    /* CHAT BODY */
+    .chat-body {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background: #efeae2;
+    }
+
+    .message {
+      max-width: 75%;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      border-radius: 15px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .message.received {
+      background: #ffffff;
+      border-top-left-radius: 0;
+    }
+
+    .message.sent {
+      background: #dcf8c6;
+      margin-left: auto;
+      border-top-right-radius: 0;
+    }
+
+    .time {
+      font-size: 10px;
+      text-align: right;
+      margin-top: 4px;
+      color: #6b7280;
+    }
+
+    /* CHAT INPUT */
+    .chat-input {
+      display: flex;
+      padding: 10px;
+      background: #f0f0f0;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px 15px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .send-btn {
+      background: #075e54;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .send-btn:hover {
+      background: #064c45;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chat-container">
+
+    <!-- HEADER -->
+    <div class="chat-header">
+      <div class="avatar"></div>
+      <div class="user-info">
+        <h3>Suriya</h3>
+        <span>Online</span>
+      </div>
+    </div>
+
+    <!-- CHAT BODY -->
+    <div class="chat-body">
+      <div class="message received">
+        Hi! How are you?
+        <div class="time">10:00 AM</div>
+      </div>
+
+      <div class="message sent">
+        I'm good How about you?
+        <div class="time">10:01 AM</div>
+      </div>
+
+      <div class="message received">
+        Doing great! Are you free today?
+        <div class="time">10:02 AM</div>
+      </div>
+
+      <div class="message sent">
+        Yes, we can catch up later 👍
+        <div class="time">10:03 AM</div>
+      </div>
+    </div>
+
+    <!-- INPUT -->
+    <div class="chat-input">
+      <input type="text" placeholder="Type a message..." />
+      <button class="send-btn">➤</button>
+    </div>
+
+  </div>
+
+</body>
+</html>
